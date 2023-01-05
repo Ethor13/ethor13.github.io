@@ -1,0 +1,19 @@
+---
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: unnumbered
+  sort-ui: false
+  filter-ui: true
+  fields: 
+      - date
+      - title
+      - categories
+      - reading-time
+title-block-banner: false
+---
+
+![](img/eio_logo.png){width=50% fig-align="center"}
+
+# Posts

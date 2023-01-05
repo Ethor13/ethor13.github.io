@@ -1,0 +1,22 @@
+---
+title: "About"
+image: img/eio_logo.png
+about:
+  template: jolla
+  links:
+    - icon: github
+      href: https://github.com/Ethor13
+      text: GitHub
+      aria-label: GitHub
+    - icon: twitter
+      href: https://twitter.com/EthanOrlowsky
+      text: Twitter
+      aria-label: Twitter
+    - icon: linkedin
+      href: https://www.linkedin.com/in/ethan-orlowsky/
+      text: LinkedIn
+      aria-label: LinkedIn
+
+---
+
+About this blog

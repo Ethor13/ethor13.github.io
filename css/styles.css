@@ -1,0 +1,84 @@
+/* css styles */
+
+.navbar-logo {
+	max-width: 50px;
+	max-height: 50px;
+}
+
+.navbar-title {
+	margin-left: 8px;
+	color: white;
+}
+
+.nav-link i.bi:hover,
+#quarto-search:hover {
+	opacity: 50%;
+}
+
+.menu-text {
+	color: white;
+}
+
+.nav-link.active .menu-text {
+	border-bottom: 2px solid white;
+	padding-bottom: 3px;
+}
+
+.menu-text:hover {
+	opacity: 50%;
+}
+
+.quarto-post.image-right {
+	flex-direction: row;
+	margin-bottom: 0.75em;
+	/* padding-bottom: 0.75em; */
+	border-color: #6c757d;
+	border-bottom: none;
+
+	padding-top: 0.75em;
+	border-top: 1px #6c757d solid;
+}
+
+.listing-date,
+.listing-reading-time {
+	font-size: 1rem;
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.metadata {
+	justify-content: center;
+}
+
+.metadata div {
+	text-align: right;
+}
+
+div.quarto-post .listing-categories {
+	padding-bottom: 0;
+}
+
+#posts h1 {
+	margin: 0;
+}
+
+.listing-title:hover,
+div.quarto-post .listing-categories .listing-category:hover {
+	color: #00bc8c;
+}
+
+.listing-title:hover {
+	text-decoration: underline;
+}
+
+div.quarto-post .listing-categories .listing-category:hover {
+	border-color: #00bc8c;
+}
+
+.quarto-listing-category .category.active {
+	color: #00bc8c;
+}

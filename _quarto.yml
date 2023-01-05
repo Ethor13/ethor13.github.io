@@ -1,0 +1,35 @@
+project:
+    type: website
+    output-dir: docs
+
+website:
+    title: "Ethan Orlowsky"
+    image: img/eio_logo.png
+    favicon: img/eio_logo_white.png
+    navbar:
+        background: "#7373E3"
+        logo: img/eio_logo_white.png
+        pinned: true
+        right:
+            - href: index.qmd
+              text: Posts
+            - about.qmd
+            - icon: github
+              href: https://github.com/Ethor13
+              aria-label: GitHub
+            - icon: twitter
+              href: https://twitter.com/EthanOrlowsky
+              aria-label: Twitter
+            - icon: linkedin
+              href: https://www.linkedin.com/in/ethan-orlowsky/
+              aria-label: LinkedIn
+
+format:
+    html:
+        css: css/styles.css
+        code-fold: false
+        theme: darkly
+        highlight-style: dracula
+        mainfont: circular-spotify
+        monofont: source code pro
+        smooth-scroll: true
