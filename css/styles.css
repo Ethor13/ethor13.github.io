@@ -1,5 +1,23 @@
 /* css styles */
 
+@font-face {
+	font-family: "circular-spotify";
+	src: url("../fonts/circular-spotify-regular-Regular.otf") format("opentype"),
+		url("../fonts/circular-spotify-regular-Regular.ttf") format("truetype"),
+		url("../fonts/circular-spotify-regular-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "circular-spotify";
+	src: url("../fonts/circular-spotify-Bold.otf") format("opentype"),
+		url("../fonts/circular-spotify-Bold.ttf") format("truetype"),
+		url("../fonts/circular-spotify-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+}
+
 .navbar-logo {
 	max-width: 50px;
 	max-height: 50px;
