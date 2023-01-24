@@ -1,0 +1,346 @@
+---
+title: "Extreme Couponing"
+subtitle: "Coupon Collector's Problem Generalized to K sets of coupons"
+date: "2023-01-23"
+categories: [probability]
+jupyter: python3
+execute:
+    cache: true
+bibliography: references.bib
+csl: ../../applied-mathematical-modelling.csl
+nocite: |
+    @*
+---
+
+## Warmup
+
+The traditional coupon collector's problem asks the following question:
+
+> If there are n different kinds of coupons, and all coupons have the same
+> probability of being drawn, how many coupons do you expect to draw with
+> replacement to collect all kinds of coupons?
+
+[Wikipedia](https://en.wikipedia.org/wiki/Coupon_collector%27s_problem#Calculating_the_expectation) has a good explanation,
+so I will use that as a template for my calculation.
+
+Let $T$ be the random variable representing the number of coupons we draw before
+collecting the entire set of coupons. We can decompose $T$ into the sum of $n$ 
+random variables, $t_i$, where $t_i$ is the number of coupons drawn to get the
+$i^{th}$ distinct coupon after $i - 1$ distinct coupons have already been drawn.
+
+\begin{align*}
+    T = t_1 + t_2 + \ldots + t_n
+\end{align*}
+
+:::{.callout-note}
+A common mistake is to decompose $T$ into random variables $t_i$, where $t_i$ 
+represents the number of coupons drawn to collect coupon $i$. 
+
+This is incorrect because we are likely going to be double-counting coupon draws.
+Let's look at a simple example where $n = 2$, and we draw coupon $1$, then coupon
+$2$. This method would set $t_1 = 1$, $t_2 = 2$, and $T = 3$. Obviously this isn't
+correct, but it's easily mistakable when you haven't seen the right way to approach
+the problem first.
+:::
+
+Using [Linearity of Expectation](https://brilliant.org/wiki/linearity-of-expectation/), we can separate our problem into simpler subproblems.
+
+\begin{align*}
+    E[T]
+    &= E[t_1 + t_2 + \ldots + t_n] \\
+    &= E[t_1] + t_2 + \ldots + E[t_n]
+\end{align*}
+
+Now the problem is finding what the general solution is for a number of the form
+$E[t_i]$. $E[t_i]$ captures the expected number of coupon draws to get the $i^{th}$
+distinct coupon after $i - 1$ distinct coupons have already been drawn. We know 
+that if $i - 1$ out of $n$ coupons have been drawn already, there are $n - i + 1$
+remaining coupons we still need to draw. So the probability we draw a new coupon
+is $\frac{n - i + 1}{n}$. $t_i$ is satisfied on the first such success, so it has 
+a [Geometric Distribution](https://en.wikipedia.org/wiki/Geometric_distribution).
+The expected value of a geometric random variable is $\frac{1}{p}$, or in our case,
+$\frac{n}{n - i + 1}$. We can now go back and solve for $E[T]$.
+
+\begin{align*}
+    E[T]
+    &= E[t_1 + t_2 + \ldots + t_n] \\
+    &= E[t_1] + E[t_2] + \ldots + E[t_n] \\
+    &= \frac{n}{n} + \frac{n}{n - 1} + \ldots + \frac{n}{1} \\
+    &= n \left( \frac{1}{1} + \frac{1}{2} + \ldots + \frac{1}{n} \right) \\
+    &= n H_n
+\end{align*}
+
+where $H_n$ is the $n^{th}$ [Harmonic Number](https://en.wikipedia.org/wiki/Harmonic_number). 
+The harmonic numbers don't have a closed form solution, but we can easily 
+calculate them for small enough $N$. We can visualize our solution using Python. 
+
+```{python}
+import matplotlib.pyplot as plt
+plt.style.use('fivethirtyeight')
+
+N = 50
+
+def harmonic(n):
+    return sum(1 / i for i in range(1, n + 1))
+
+expectations = [n * harmonic(n) for n in range(N)]
+
+plt.plot(range(1, N + 1), expectations)
+plt.gca().set(title="Coupon Collector's Problem",
+              xlabel='N', 
+              ylabel='Expected Draws')
+plt.show()
+```
+
+## Generalizing to K sets of Coupons
+
+A natural extension to this warmup is asking how things change when we need to 
+collect K of each coupon. Unfortunately, we need to take a completely different
+approach than we did for the case of $K = 1$. We must now leverage combinatorics. 
+
+First, let's define a few terms. We are trying to find the expected number of 
+coupons we must draw before getting $K$ of each, or $E_K[T]$. $T$ takes on integer
+values, so we can rewrite our expectation as:
+
+\begin{align*}
+    E_K[T]
+    &= \sum_{i=0}^\infty i \cdot P(T = i) \\
+    &= P(T = 1) + 2 \cdot P(T = 2) + 3 \cdot P(T = 3) + \ldots \\
+    &= P(T = 1) + P(T = 2) + P(T = 3) + \ldots \\
+    & \hspace{54pt} + P(T = 2) + P(T = 3) + \ldots \\
+    & \hspace{107pt} + P(T = 3) + \ldots \\
+    & \hspace{160pt} + \ldots \\
+    &= P(T > 0) + P(T > 1) + P(T > 2) + \ldots \\ 
+    &= \sum_{i = 0}^\infty P(T > i) \\
+    &= \sum_{i = 0}^\infty p_i
+\end{align*}
+
+where $p_i = P(T > i)$. The interpretation of $p_i$ is the probability that we
+fail to collect $K$ complete sets in $i$ draws. Since there are $n$ different kinds
+of coupons, there are $n^i$ ways to draw $i$ coupons. All the possible ways to
+draw these coupons can be represented as the polynomial:
+
+\begin{align*}
+    (x_1 + \ldots + x_n)^i
+\end{align*}
+
+If we were to expand this polynomial, each term would represent a combination of 
+possible draws. For example, one of the terms in the expansion would be 
+$x_1^3x_5x_9^7x_{12}^{i - 11}$. This term represents the event of pulling 3 of 
+coupon #1, 1 of coupon #5, 7 of coupon #9, and the remaining $i - 11$ being 
+coupon #12. Of course there are multiple ways (permutations) to pull this combination
+of coupons, so there would also be a coefficient on the term indicating how many
+ways this can be done. 
+
+:::{.callout-note}
+Though not core to the problem at hand, we can quickly discuss what that coefficient
+would be. Sticking with our previous example of $x_1^3x_5x_9^7x_{12}^{i - 11}$, 
+we start by thinking about how we can assign an order for these given amounts of
+coupons. We have $i$ spots, and 3 of coupon #1, so there are ${i \choose 3}$ ways 
+to pick where the first kind of coupon go. After these are assigned, there are 
+$i - 3$ spots remaining, so there are ${i - 3 \choose 1}$ ways to assign the singular
+coupon #5 to a spot. Following this reasoning will yield ${i - 4 \choose 7}$ and 
+${i - 11 \choose i - 11}$ as the remaining ways to assign the respective coupons.
+Multiplying all of these "choose" operations gives us the total ways to assign the
+coupons.
+
+\begin{align*}
+    {i \choose 3} \cdot {i - 3 \choose 1} \cdot {i - 4 \choose 7} \cdot {i - 11 \choose i - 11}
+    &= \frac{i!}{(i - 3)!3!} \cdot \frac{(i - 3)!}{(i - 4)!1!} \cdot \frac{(i - 4)!}{(i - 11)!7!}
+       \cdot \frac{(i - 11)!}{0!(i - 11)!} \\
+    &= \frac{i!}{3!1!7!(i - 11)!}
+\end{align*}
+
+The result is just the total ways you can arrange $i$ distinct coupons (suppose
+coupons of the same type were somehow distinguishable), divided by the number of 
+ways a given ordering is duplicated because coupons of the same type are not
+actually meaningfully distinguishable.
+:::
+
+Now, suppose we expanded the polynomial above fully. The terms where all $x_j$ 
+are raised to a power $\ge K$ represent successfully collecting $K$ sets of all 
+$n$ coupons. If we remove all terms representing completed sets, then we are left
+with only incomplete collections. We can denote this removal process with the
+notation $\{(x_1 + \ldots + x_n)^i\}_K$. "The Double Dixie Cup Problem" [@newman] defines
+this formally:
+
+> If $P(x_1, \ldots, x_n)$ is a polynomial or power series we define 
+> $\{P(x_1, \ldots, x_n)\}_K$ to be the polynomial, or series, resulting when all
+> terms having all exponents $\ge K$ have been removed.
+
+Now, note that if we evaluate $\{(x_1 + \ldots + x_n)^i\}_K$ at $x_1 = \ldots = x_n = 1$,
+we get a number that represents the number of draws that result in incomplete collections.
+Further, $\frac{\{(x_1 + \ldots + x_n)^i\}_K}{n^i}$ evaluated at all 1's is just the
+probability that we fail to complete $K$ collections in $i$ draws, or $p_i$. This
+takes us a step forward in our expectation calculation.
+
+\begin{align*}
+    E_K[T]
+    &= \sum_{i = 0}^\infty p_i \\
+    &= \sum_{i = 0}^\infty \frac{\{(x_1 + \ldots + x_n)^i\}_K}{n^i}
+\end{align*}
+
+But finding a way to evaluate the summand is not immediately obvious. To do this, 
+we must find something we do know that looks similar to the above form, namely
+the exponential [Power Series](https://en.wikipedia.org/wiki/Power_series). As a reminder the power series is:
+
+\begin{align*}
+    e^x
+    &= \sum_{i = 0}^\infty \frac{x^i}{i!}
+\end{align*}
+
+This is the one-variable case, but to match the form of our previous work, we can
+use the generalized form which looks like:
+
+\begin{align*}
+    e^{x_1 + \ldots + x_n}
+    &= \sum_{i = 0}^\infty \frac{(x_1 + \ldots + x_n)^i}{i!}
+\end{align*}
+
+We're getting closer, but we still need to encapsulate the polynomial in the 
+$\{\cdot\}_K$ operator. To do this requires a little leap of faith. Using exponent
+rules and the single-variable exponential power series, we can equivalently find
+that:
+
+\begin{align*}
+    e^{x_1 + \ldots + x_n}
+    &= e^{x_1}\cdots e^{x_n} \\
+    &= \bigg( 1 + x_1 + \frac{x_1^2}{2!} + \ldots \bigg) \cdots
+       \bigg( 1 + x_n + \frac{x_n^2}{2!} + \ldots \bigg)
+\end{align*}
+
+What we can gleam from this is that in this polynomial expansion, you are picking
+how many coupons were drawn of each type, instead of fixing a number of draws $i$
+like we did previously. If we ignore the coefficients for now and just focus on
+the $x_j$'s, we can see how for any possible combination of coupons you can think
+of, there is a way to get that combination by picking the correct term in each of
+the $n$ taylor series expansions.
+
+Thinking in the same vein, we can represent all the successful ways of achieving
+$K$ complete sets by only including part of the taylor series expansions for each
+of the $e^{x_j}$ terms. The part of the taylor series expansions that yield all
+the complete collections is:
+
+\begin{align*}
+    \bigg( \frac{x_1^K}{K!} + \frac{x_1^{K+1}}{(K+1)!} + \ldots \bigg) \cdots
+    \bigg( \frac{x_n^K}{K!} + \frac{x_n^{K+1}}{(K+1)!} + \ldots \bigg)
+\end{align*}
+
+Whichever term you pick from each expansion, the exponent will always be at least
+$K$, which means each term represents a different way to complete $K$ sets of 
+coupons. Since $p_i$ represents the probability of failure, we want to get rid of
+these terms that represent successes. Doing just that and simplifying a little leaves
+us with:
+
+\begin{align*}
+    F
+    &= e^{x_1 + \ldots + x_n}
+    - \bigg( \frac{x_1^K}{K!} + \frac{x_1^{K+1}}{(K+1)!} + \ldots \bigg)
+    \cdots \bigg( \frac{x_n^K}{K!} + \frac{x_n^{K+1}}{(K+1)!} + \ldots \bigg) \\
+    &= e^{x_1 + \ldots + x_n}
+    - \bigg(e^{x_1} - S_K(x_1) \bigg)
+    \cdots \bigg(e^{x_n} - S_K(x_n) \bigg)
+\end{align*}
+
+where
+
+\begin{align*}
+    S_K(t)
+    &= \sum_{i = 0}^{K - 1} \frac{t^i}{i!}
+\end{align*}
+
+And by the discussion above that interpreted the subtraction of the product of the
+different power series expansions as removing all the scenarios that resulted in
+success, we claim that this expression is equal to:
+
+\begin{align*}
+    F
+    &= \sum_{i = 0}^\infty \frac{\{(x_1 + \ldots + x_n)^i \}_K}{i!}
+\end{align*}
+
+which is almost what $E_K[T]$ is equal to. The only difference is that this denominator
+is $i!$ compared to the desired $n^i$. Luckily, there is an identity (that I have
+previously never heard of) that allows us to interchange between the two:
+
+\begin{align*}
+    n\int_0^\infty \frac{t^i}{i!}e^{-nt} dt
+    &= \frac{1}{n^i}
+\end{align*}
+
+So, if we recall where we left off for $E_K[T]$, we can plug this identity in which
+will allow us to use $F$. 
+
+\begin{align*}
+    E_K[T]
+    &= \sum_{i = 0}^\infty \frac{\{(x_1 + \ldots + x_n)^i \}_K}{n^i} \\
+    &= \sum_{i = 0}^\infty \{(x_1 + \ldots + x_n)^i \}_K 
+        \left( n\int_0^\infty \frac{t^i}{i!}e^{-nt} dt \right) \\
+    &= n\int_0^\infty\sum_{i = 0}^\infty \left( 
+        \frac{\{(x_1 + \ldots + x_n)^i \}_K}{i!}t^i\right)e^{-nt} dt \\
+    &= n\int_0^\infty \left( e^{t(x_1 + \ldots + x_n)} - 
+        \left( e^{tx_1} - S_K(tx_1) \right) \cdots \left( e^{tx_n} - S_K(tx_n) \right) \right)e^{-nt} dt \\
+\end{align*}
+
+We are able to switch the order of the sum and integral operators as a result of [Fubini's Theorem](https://en.wikipedia.org/wiki/Fubini%27s_theorem).
+Also, notice in line 3 that the summand isn't exactly the same format that it was in $F$.
+But this isn't a problem because the only new term is $t^i$, which appears in the
+power series for $e^t$. The affect is that all exponents are multiplied by a factor
+of $t$. Now, remembering that setting $x_1 = \ldots = x_n = 1$ effectively calculates
+the ratio of incomplete collections to possible collections, we can simplify the
+above equation dramatically.
+
+\begin{align*}
+    E_K[T]
+    &= n\int_0^\infty \left( e^{tn} - 
+        \left( e^{t} - S_K(t) \right)^n \right)e^{-nt} dt \\
+    &= n\int_0^\infty 1 - 
+        \left( e^{t} - S_K(t) \right)^ne^{-nt} dt \\
+    &= n\int_0^\infty 1 - 
+        \left( 1 - S_K(t)e^{-t} \right)^n dt
+\end{align*}
+
+And that's it! It's okay to be a little bit unsatisfied at this answer since it
+does contain an integral that isn't solvable by hand (to my knowledge). However,
+in the next section, we will be looking at how we can leverage Python to get
+more concrete answers for some example cases.
+
+
+```{python}
+import numpy as np
+from scipy import integrate
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.style.use('fivethirtyeight')
+
+factorial = np.vectorize(np.math.factorial)
+
+def S(K, t):
+    arr = np.arange(K)
+    return np.sum(np.power(t, arr) / factorial(arr))
+
+def integrand(t, K, n):
+    return 1 - (1 - S(K, t) * np.exp(-t))**n
+
+n_range = np.arange(1, 11)
+K_range = np.arange(1, 11)
+results = np.empty((n_range.size, K_range.size))
+
+for n in n_range:
+    for K in K_range:
+        result, err = integrate.quad(integrand, 0, np.inf, args=(K, n))
+        results[n - 1, K - 1] = n * result
+
+fig, ax = plt.subplots()
+
+sns.heatmap(results, cmap='coolwarm', square=True, fmt='.1f', annot=True, 
+            annot_kws={"size": 10}, ax=ax)
+
+ax.set_title("Generalized Coupon Collector Problem")
+ax.set_xlabel("K")
+ax.set_ylabel("n", rotation=0)
+ax.set_xticklabels(K_range)
+ax.set_yticklabels(n_range, rotation=0)
+
+fig.set_size_inches(8, 8)
+plt.show()
+```

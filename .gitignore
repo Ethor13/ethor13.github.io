@@ -1,3 +1,5 @@
 .quarto/
-
+.venv/
+_freeze/
+.jupyter_cache/
 /.quarto/

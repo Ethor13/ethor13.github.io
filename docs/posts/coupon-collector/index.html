@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-01-23">
+
+<title>Ethan Orlowsky - Extreme Couponing</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/eio_logo_white.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/eio_logo_white.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ethan Orlowsky</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Ethor13"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/EthanOrlowsky"><i class="bi bi-twitter" role="img" aria-label="Twitter">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ethan-orlowsky/"><i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Extreme Couponing</h1>
+            <p class="subtitle lead">Coupon Collector’s Problem Generalized to K sets of coupons</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">probability</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 23, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="warmup" class="level2">
+<h2 class="anchored" data-anchor-id="warmup">Warmup</h2>
+<p>The traditional coupon collector’s problem asks the following question:</p>
+<blockquote class="blockquote">
+<p>If there are n different kinds of coupons, and all coupons have the same probability of being drawn, how many coupons do you expect to draw with replacement to collect all kinds of coupons?</p>
+</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem#Calculating_the_expectation">Wikipedia</a> has a good explanation, so I will use that as a template for my calculation.</p>
+<p>Let <span class="math inline">\(T\)</span> be the random variable representing the number of coupons we draw before collecting the entire set of coupons. We can decompose <span class="math inline">\(T\)</span> into the sum of <span class="math inline">\(n\)</span> random variables, <span class="math inline">\(t_i\)</span>, where <span class="math inline">\(t_i\)</span> is the number of coupons drawn to get the <span class="math inline">\(i^{th}\)</span> distinct coupon after <span class="math inline">\(i - 1\)</span> distinct coupons have already been drawn.</p>
+<p><span class="math display">\[\begin{align*}
+    T = t_1 + t_2 + \ldots + t_n
+\end{align*}\]</span></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A common mistake is to decompose <span class="math inline">\(T\)</span> into random variables <span class="math inline">\(t_i\)</span>, where <span class="math inline">\(t_i\)</span> represents the number of coupons drawn to collect coupon <span class="math inline">\(i\)</span>.</p>
+<p>This is incorrect because we are likely going to be double-counting coupon draws. Let’s look at a simple example where <span class="math inline">\(n = 2\)</span>, and we draw coupon <span class="math inline">\(1\)</span>, then coupon <span class="math inline">\(2\)</span>. This method would set <span class="math inline">\(t_1 = 1\)</span>, <span class="math inline">\(t_2 = 2\)</span>, and <span class="math inline">\(T = 3\)</span>. Obviously this isn’t correct, but it’s easily mistakable when you haven’t seen the right way to approach the problem first.</p>
+</div>
+</div>
+<p>Using <a href="https://brilliant.org/wiki/linearity-of-expectation/">Linearity of Expectation</a>, we can separate our problem into simpler subproblems.</p>
+<p><span class="math display">\[\begin{align*}
+    E[T]
+    &amp;= E[t_1 + t_2 + \ldots + t_n] \\
+    &amp;= E[t_1] + t_2 + \ldots + E[t_n]
+\end{align*}\]</span></p>
+<p>Now the problem is finding what the general solution is for a number of the form <span class="math inline">\(E[t_i]\)</span>. <span class="math inline">\(E[t_i]\)</span> captures the expected number of coupon draws to get the <span class="math inline">\(i^{th}\)</span> distinct coupon after <span class="math inline">\(i - 1\)</span> distinct coupons have already been drawn. We know that if <span class="math inline">\(i - 1\)</span> out of <span class="math inline">\(n\)</span> coupons have been drawn already, there are <span class="math inline">\(n - i + 1\)</span> remaining coupons we still need to draw. So the probability we draw a new coupon is <span class="math inline">\(\frac{n - i + 1}{n}\)</span>. <span class="math inline">\(t_i\)</span> is satisfied on the first such success, so it has a <a href="https://en.wikipedia.org/wiki/Geometric_distribution">Geometric Distribution</a>. The expected value of a geometric random variable is <span class="math inline">\(\frac{1}{p}\)</span>, or in our case, <span class="math inline">\(\frac{n}{n - i + 1}\)</span>. We can now go back and solve for <span class="math inline">\(E[T]\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+    E[T]
+    &amp;= E[t_1 + t_2 + \ldots + t_n] \\
+    &amp;= E[t_1] + E[t_2] + \ldots + E[t_n] \\
+    &amp;= \frac{n}{n} + \frac{n}{n - 1} + \ldots + \frac{n}{1} \\
+    &amp;= n \left( \frac{1}{1} + \frac{1}{2} + \ldots + \frac{1}{n} \right) \\
+    &amp;= n H_n
+\end{align*}\]</span></p>
+<p>where <span class="math inline">\(H_n\)</span> is the <span class="math inline">\(n^{th}\)</span> <a href="https://en.wikipedia.org/wiki/Harmonic_number">Harmonic Number</a>. The harmonic numbers don’t have a closed form solution, but we can easily calculate them for small enough <span class="math inline">\(N\)</span>. We can visualize our solution using Python.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'fivethirtyeight'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> harmonic(n):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(<span class="dv">1</span> <span class="op">/</span> i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>expectations <span class="op">=</span> [n <span class="op">*</span> harmonic(n) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(N)]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="bu">range</span>(<span class="dv">1</span>, N <span class="op">+</span> <span class="dv">1</span>), expectations)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.gca().<span class="bu">set</span>(title<span class="op">=</span><span class="st">"Coupon Collector's Problem"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>              xlabel<span class="op">=</span><span class="st">'N'</span>, </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>              ylabel<span class="op">=</span><span class="st">'Expected Draws'</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-2-output-1.png" width="671" height="487"></p>
+</div>
+</div>
+</section>
+<section id="generalizing-to-k-sets-of-coupons" class="level2">
+<h2 class="anchored" data-anchor-id="generalizing-to-k-sets-of-coupons">Generalizing to K sets of Coupons</h2>
+<p>A natural extension to this warmup is asking how things change when we need to collect K of each coupon. Unfortunately, we need to take a completely different approach than we did for the case of <span class="math inline">\(K = 1\)</span>. We must now leverage combinatorics.</p>
+<p>First, let’s define a few terms. We are trying to find the expected number of coupons we must draw before getting <span class="math inline">\(K\)</span> of each, or <span class="math inline">\(E_K[T]\)</span>. <span class="math inline">\(T\)</span> takes on integer values, so we can rewrite our expectation as:</p>
+<p><span class="math display">\[\begin{align*}
+    E_K[T]
+    &amp;= \sum_{i=0}^\infty i \cdot P(T = i) \\
+    &amp;= P(T = 1) + 2 \cdot P(T = 2) + 3 \cdot P(T = 3) + \ldots \\
+    &amp;= P(T = 1) + P(T = 2) + P(T = 3) + \ldots \\
+    &amp; \hspace{54pt} + P(T = 2) + P(T = 3) + \ldots \\
+    &amp; \hspace{107pt} + P(T = 3) + \ldots \\
+    &amp; \hspace{160pt} + \ldots \\
+    &amp;= P(T &gt; 0) + P(T &gt; 1) + P(T &gt; 2) + \ldots \\
+    &amp;= \sum_{i = 0}^\infty P(T &gt; i) \\
+    &amp;= \sum_{i = 0}^\infty p_i
+\end{align*}\]</span></p>
+<p>where <span class="math inline">\(p_i = P(T &gt; i)\)</span>. The interpretation of <span class="math inline">\(p_i\)</span> is the probability that we fail to collect <span class="math inline">\(K\)</span> complete sets in <span class="math inline">\(i\)</span> draws. Since there are <span class="math inline">\(n\)</span> different kinds of coupons, there are <span class="math inline">\(n^i\)</span> ways to draw <span class="math inline">\(i\)</span> coupons. All the possible ways to draw these coupons can be represented as the polynomial:</p>
+<p><span class="math display">\[\begin{align*}
+    (x_1 + \ldots + x_n)^i
+\end{align*}\]</span></p>
+<p>If we were to expand this polynomial, each term would represent a combination of possible draws. For example, one of the terms in the expansion would be <span class="math inline">\(x_1^3x_5x_9^7x_{12}^{i - 11}\)</span>. This term represents the event of pulling 3 of coupon #1, 1 of coupon #5, 7 of coupon #9, and the remaining <span class="math inline">\(i - 11\)</span> being coupon #12. Of course there are multiple ways (permutations) to pull this combination of coupons, so there would also be a coefficient on the term indicating how many ways this can be done.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Though not core to the problem at hand, we can quickly discuss what that coefficient would be. Sticking with our previous example of <span class="math inline">\(x_1^3x_5x_9^7x_{12}^{i - 11}\)</span>, we start by thinking about how we can assign an order for these given amounts of coupons. We have <span class="math inline">\(i\)</span> spots, and 3 of coupon #1, so there are <span class="math inline">\({i \choose 3}\)</span> ways to pick where the first kind of coupon go. After these are assigned, there are <span class="math inline">\(i - 3\)</span> spots remaining, so there are <span class="math inline">\({i - 3 \choose 1}\)</span> ways to assign the singular coupon #5 to a spot. Following this reasoning will yield <span class="math inline">\({i - 4 \choose 7}\)</span> and <span class="math inline">\({i - 11 \choose i - 11}\)</span> as the remaining ways to assign the respective coupons. Multiplying all of these “choose” operations gives us the total ways to assign the coupons.</p>
+<p><span class="math display">\[\begin{align*}
+    {i \choose 3} \cdot {i - 3 \choose 1} \cdot {i - 4 \choose 7} \cdot {i - 11 \choose i - 11}
+    &amp;= \frac{i!}{(i - 3)!3!} \cdot \frac{(i - 3)!}{(i - 4)!1!} \cdot \frac{(i - 4)!}{(i - 11)!7!}
+       \cdot \frac{(i - 11)!}{0!(i - 11)!} \\
+    &amp;= \frac{i!}{3!1!7!(i - 11)!}
+\end{align*}\]</span></p>
+<p>The result is just the total ways you can arrange <span class="math inline">\(i\)</span> distinct coupons (suppose coupons of the same type were somehow distinguishable), divided by the number of ways a given ordering is duplicated because coupons of the same type are not actually meaningfully distinguishable.</p>
+</div>
+</div>
+<p>Now, suppose we expanded the polynomial above fully. The terms where all <span class="math inline">\(x_j\)</span> are raised to a power <span class="math inline">\(\ge K\)</span> represent successfully collecting <span class="math inline">\(K\)</span> sets of all <span class="math inline">\(n\)</span> coupons. If we remove all terms representing completed sets, then we are left with only incomplete collections. We can denote this removal process with the notation <span class="math inline">\(\{(x_1 + \ldots + x_n)^i\}_K\)</span>. “The Double Dixie Cup Problem” <span class="citation" data-cites="newman">[<a href="#ref-newman" role="doc-biblioref">1</a>]</span> defines this formally:</p>
+<blockquote class="blockquote">
+<p>If <span class="math inline">\(P(x_1, \ldots, x_n)\)</span> is a polynomial or power series we define <span class="math inline">\(\{P(x_1, \ldots, x_n)\}_K\)</span> to be the polynomial, or series, resulting when all terms having all exponents <span class="math inline">\(\ge K\)</span> have been removed.</p>
+</blockquote>
+<p>Now, note that if we evaluate <span class="math inline">\(\{(x_1 + \ldots + x_n)^i\}_K\)</span> at <span class="math inline">\(x_1 = \ldots = x_n = 1\)</span>, we get a number that represents the number of draws that result in incomplete collections. Further, <span class="math inline">\(\frac{\{(x_1 + \ldots + x_n)^i\}_K}{n^i}\)</span> evaluated at all 1’s is just the probability that we fail to complete <span class="math inline">\(K\)</span> collections in <span class="math inline">\(i\)</span> draws, or <span class="math inline">\(p_i\)</span>. This takes us a step forward in our expectation calculation.</p>
+<p><span class="math display">\[\begin{align*}
+    E_K[T]
+    &amp;= \sum_{i = 0}^\infty p_i \\
+    &amp;= \sum_{i = 0}^\infty \frac{\{(x_1 + \ldots + x_n)^i\}_K}{n^i}
+\end{align*}\]</span></p>
+<p>But finding a way to evaluate the summand is not immediately obvious. To do this, we must find something we do know that looks similar to the above form, namely the exponential <a href="https://en.wikipedia.org/wiki/Power_series">Power Series</a>. As a reminder the power series is:</p>
+<p><span class="math display">\[\begin{align*}
+    e^x
+    &amp;= \sum_{i = 0}^\infty \frac{x^i}{i!}
+\end{align*}\]</span></p>
+<p>This is the one-variable case, but to match the form of our previous work, we can use the generalized form which looks like:</p>
+<p><span class="math display">\[\begin{align*}
+    e^{x_1 + \ldots + x_n}
+    &amp;= \sum_{i = 0}^\infty \frac{(x_1 + \ldots + x_n)^i}{i!}
+\end{align*}\]</span></p>
+<p>We’re getting closer, but we still need to encapsulate the polynomial in the <span class="math inline">\(\{\cdot\}_K\)</span> operator. To do this requires a little leap of faith. Using exponent rules and the single-variable exponential power series, we can equivalently find that:</p>
+<p><span class="math display">\[\begin{align*}
+    e^{x_1 + \ldots + x_n}
+    &amp;= e^{x_1}\cdots e^{x_n} \\
+    &amp;= \bigg( 1 + x_1 + \frac{x_1^2}{2!} + \ldots \bigg) \cdots
+       \bigg( 1 + x_n + \frac{x_n^2}{2!} + \ldots \bigg)
+\end{align*}\]</span></p>
+<p>What we can gleam from this is that in this polynomial expansion, you are picking how many coupons were drawn of each type, instead of fixing a number of draws <span class="math inline">\(i\)</span> like we did previously. If we ignore the coefficients for now and just focus on the <span class="math inline">\(x_j\)</span>’s, we can see how for any possible combination of coupons you can think of, there is a way to get that combination by picking the correct term in each of the <span class="math inline">\(n\)</span> taylor series expansions.</p>
+<p>Thinking in the same vein, we can represent all the successful ways of achieving <span class="math inline">\(K\)</span> complete sets by only including part of the taylor series expansions for each of the <span class="math inline">\(e^{x_j}\)</span> terms. The part of the taylor series expansions that yield all the complete collections is:</p>
+<p><span class="math display">\[\begin{align*}
+    \bigg( \frac{x_1^K}{K!} + \frac{x_1^{K+1}}{(K+1)!} + \ldots \bigg) \cdots
+    \bigg( \frac{x_n^K}{K!} + \frac{x_n^{K+1}}{(K+1)!} + \ldots \bigg)
+\end{align*}\]</span></p>
+<p>Whichever term you pick from each expansion, the exponent will always be at least <span class="math inline">\(K\)</span>, which means each term represents a different way to complete <span class="math inline">\(K\)</span> sets of coupons. Since <span class="math inline">\(p_i\)</span> represents the probability of failure, we want to get rid of these terms that represent successes. Doing just that and simplifying a little leaves us with:</p>
+<p><span class="math display">\[\begin{align*}
+    F
+    &amp;= e^{x_1 + \ldots + x_n}
+    - \bigg( \frac{x_1^K}{K!} + \frac{x_1^{K+1}}{(K+1)!} + \ldots \bigg)
+    \cdots \bigg( \frac{x_n^K}{K!} + \frac{x_n^{K+1}}{(K+1)!} + \ldots \bigg) \\
+    &amp;= e^{x_1 + \ldots + x_n}
+    - \bigg(e^{x_1} - S_K(x_1) \bigg)
+    \cdots \bigg(e^{x_n} - S_K(x_n) \bigg)
+\end{align*}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\begin{align*}
+    S_K(t)
+    &amp;= \sum_{i = 0}^{K - 1} \frac{t^i}{i!}
+\end{align*}\]</span></p>
+<p>And by the discussion above that interpreted the subtraction of the product of the different power series expansions as removing all the scenarios that resulted in success, we claim that this expression is equal to:</p>
+<p><span class="math display">\[\begin{align*}
+    F
+    &amp;= \sum_{i = 0}^\infty \frac{\{(x_1 + \ldots + x_n)^i \}_K}{i!}
+\end{align*}\]</span></p>
+<p>which is almost what <span class="math inline">\(E_K[T]\)</span> is equal to. The only difference is that this denominator is <span class="math inline">\(i!\)</span> compared to the desired <span class="math inline">\(n^i\)</span>. Luckily, there is an identity (that I have previously never heard of) that allows us to interchange between the two:</p>
+<p><span class="math display">\[\begin{align*}
+    n\int_0^\infty \frac{t^i}{i!}e^{-nt} dt
+    &amp;= \frac{1}{n^i}
+\end{align*}\]</span></p>
+<p>So, if we recall where we left off for <span class="math inline">\(E_K[T]\)</span>, we can plug this identity in which will allow us to use <span class="math inline">\(F\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+    E_K[T]
+    &amp;= \sum_{i = 0}^\infty \frac{\{(x_1 + \ldots + x_n)^i \}_K}{n^i} \\
+    &amp;= \sum_{i = 0}^\infty \{(x_1 + \ldots + x_n)^i \}_K
+        \left( n\int_0^\infty \frac{t^i}{i!}e^{-nt} dt \right) \\
+    &amp;= n\int_0^\infty\sum_{i = 0}^\infty \left(
+        \frac{\{(x_1 + \ldots + x_n)^i \}_K}{i!}t^i\right)e^{-nt} dt \\
+    &amp;= n\int_0^\infty \left( e^{t(x_1 + \ldots + x_n)} -
+        \left( e^{tx_1} - S_K(tx_1) \right) \cdots \left( e^{tx_n} - S_K(tx_n) \right) \right)e^{-nt} dt \\
+\end{align*}\]</span></p>
+<p>We are able to switch the order of the sum and integral operators as a result of <a href="https://en.wikipedia.org/wiki/Fubini%27s_theorem">Fubini’s Theorem</a>. Also, notice in line 3 that the summand isn’t exactly the same format that it was in <span class="math inline">\(F\)</span>. But this isn’t a problem because the only new term is <span class="math inline">\(t^i\)</span>, which appears in the power series for <span class="math inline">\(e^t\)</span>. The affect is that all exponents are multiplied by a factor of <span class="math inline">\(t\)</span>. Now, remembering that setting <span class="math inline">\(x_1 = \ldots = x_n = 1\)</span> effectively calculates the ratio of incomplete collections to possible collections, we can simplify the above equation dramatically.</p>
+<p><span class="math display">\[\begin{align*}
+    E_K[T]
+    &amp;= n\int_0^\infty \left( e^{tn} -
+        \left( e^{t} - S_K(t) \right)^n \right)e^{-nt} dt \\
+    &amp;= n\int_0^\infty 1 -
+        \left( e^{t} - S_K(t) \right)^ne^{-nt} dt \\
+    &amp;= n\int_0^\infty 1 -
+        \left( 1 - S_K(t)e^{-t} \right)^n dt
+\end{align*}\]</span></p>
+<p>And that’s it! It’s okay to be a little bit unsatisfied at this answer since it does contain an integral that isn’t solvable by hand (to my knowledge). However, in the next section, we will be looking at how we can leverage Python to get more concrete answers for some example cases.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'fivethirtyeight'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>factorial <span class="op">=</span> np.vectorize(np.math.factorial)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> S(K, t):</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    arr <span class="op">=</span> np.arange(K)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">sum</span>(np.power(t, arr) <span class="op">/</span> factorial(arr))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> integrand(t, K, n):</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> (<span class="dv">1</span> <span class="op">-</span> S(K, t) <span class="op">*</span> np.exp(<span class="op">-</span>t))<span class="op">**</span>n</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>n_range <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">11</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>K_range <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">11</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> np.empty((n_range.size, K_range.size))</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> n_range:</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> K <span class="kw">in</span> K_range:</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        result, err <span class="op">=</span> integrate.quad(integrand, <span class="dv">0</span>, np.inf, args<span class="op">=</span>(K, n))</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        results[n <span class="op">-</span> <span class="dv">1</span>, K <span class="op">-</span> <span class="dv">1</span>] <span class="op">=</span> n <span class="op">*</span> result</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>sns.heatmap(results, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, square<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">'.1f'</span>, annot<span class="op">=</span><span class="va">True</span>, </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>            annot_kws<span class="op">=</span>{<span class="st">"size"</span>: <span class="dv">10</span>}, ax<span class="op">=</span>ax)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Generalized Coupon Collector Problem"</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"K"</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"n"</span>, rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(K_range)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(n_range, rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">8</span>, <span class="dv">8</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-3-output-1.png" width="700" height="648"></p>
+</div>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-newman" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">D.J. Newman, The double dixie cup problem, The American Mathematical Monthly. 67 (1960) 58–61. <a href="http://www.jstor.org/stable/2308930">http://www.jstor.org/stable/2308930</a> (accessed January 23, 2023).</div>
+</div>
+<div id="ref-ferrante" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">M. Ferrante, M. Saltalamacchia, The coupon collector’s problem, in: 2014. <a href="https://mat.uab.cat/matmat_antiga/PDFv2014/v2014n02.pdf">https://mat.uab.cat/matmat_antiga/PDFv2014/v2014n02.pdf</a>.</div>
+</div>
+<div id="ref-myers" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">A.N. Myers, H.S. Wilf, Some new aspects of the coupon-collector’s problem, (2003). https://doi.org/<a href="https://doi.org/10.48550/arxiv.math/0304229">10.48550/arxiv.math/0304229</a>.</div>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

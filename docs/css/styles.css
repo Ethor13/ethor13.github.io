@@ -82,3 +82,9 @@ div.quarto-post .listing-categories .listing-category:hover {
 .quarto-listing-category .category.active {
 	color: #00bc8c;
 }
+
+/* Center Jupyter Ouput Cells */
+.cell-output p {
+	display: flex;
+	justify-content: center;
+}
