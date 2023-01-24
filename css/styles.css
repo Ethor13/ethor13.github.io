@@ -20,9 +20,9 @@
 
 @font-face {
 	font-family: "source code pro";
-	src: url("../fonts/SourceCodePro-Regular.otf") format("opentype"),
-		url("../fonts/SourceCodePro-Regular.ttf") format("truetype"),
-		url("../fonts/SourceCodePro-Regular.woff") format("woff");
+	src: url("../fonts/SourceCodePro-regular-Regular.otf") format("opentype"),
+		url("../fonts/SourceCodePro-regular-Regular.ttf") format("truetype"),
+		url("../fonts/SourceCodePro-regular-Regular.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
