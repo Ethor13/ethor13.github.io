@@ -34,11 +34,11 @@ $i^{th}$ distinct coupon after $i - 1$ distinct coupons have already been drawn.
 
 :::{.callout-note}
 A common mistake is to decompose $T$ into random variables $t_i$, where $t_i$ 
-represents the number of coupons drawn to collect coupon $i$. 
+represents the number of coupons drawn to collect coupon #$i$. 
 
 This is incorrect because we are likely going to be double-counting coupon draws.
-Let's look at a simple example where $n = 2$, and we draw coupon $1$, then coupon
-$2$. This method would set $t_1 = 1$, $t_2 = 2$, and $T = 3$. Obviously this isn't
+Let's look at a simple example where $n = 2$, and we draw coupon #$1$, then coupon
+#$2$. This method would set $t_1 = 1$, $t_2 = 2$, and $T = 3$. Obviously this isn't
 correct, but it's easily mistakable when you haven't seen the right way to approach
 the problem first.
 :::
@@ -48,7 +48,7 @@ Using [Linearity of Expectation](https://brilliant.org/wiki/linearity-of-expecta
 \begin{align*}
     E[T]
     &= E[t_1 + t_2 + \ldots + t_n] \\
-    &= E[t_1] + t_2 + \ldots + E[t_n]
+    &= E[t_1] + E[t_2] + \ldots + E[t_n]
 \end{align*}
 
 Now the problem is finding what the general solution is for a number of the form
@@ -140,7 +140,7 @@ coupons. We have $i$ spots, and 3 of coupon #1, so there are ${i \choose 3}$ way
 to pick where the first kind of coupon go. After these are assigned, there are 
 $i - 3$ spots remaining, so there are ${i - 3 \choose 1}$ ways to assign the singular
 coupon #5 to a spot. Following this reasoning will yield ${i - 4 \choose 7}$ and 
-${i - 11 \choose i - 11}$ as the remaining ways to assign the respective coupons.
+${i - 11 \choose i - 11}$ as the remaining ways to assign the final two types of coupons.
 Multiplying all of these "choose" operations gives us the total ways to assign the
 coupons.
 
@@ -182,7 +182,8 @@ takes us a step forward in our expectation calculation.
 
 But finding a way to evaluate the summand is not immediately obvious. To do this, 
 we must find something we do know that looks similar to the above form, namely
-the exponential [Power Series](https://en.wikipedia.org/wiki/Power_series). As a reminder the power series is:
+the exponential [Power Series](https://en.wikipedia.org/wiki/Power_series). As a 
+reminder, the exponential power series is:
 
 \begin{align*}
     e^x
@@ -214,7 +215,7 @@ how many coupons were drawn of each type, instead of fixing a number of draws $i
 like we did previously. If we ignore the coefficients for now and just focus on
 the $x_j$'s, we can see how for any possible combination of coupons you can think
 of, there is a way to get that combination by picking the correct term in each of
-the $n$ taylor series expansions.
+the $n$ power series expansions.
 
 Thinking in the same vein, we can represent all the successful ways of achieving
 $K$ complete sets by only including part of the taylor series expansions for each
@@ -301,8 +302,8 @@ above equation dramatically.
 
 And that's it! It's okay to be a little bit unsatisfied at this answer since it
 does contain an integral that isn't solvable by hand (to my knowledge). However,
-in the next section, we will be looking at how we can leverage Python to get
-more concrete answers for some example cases.
+in the following code block, we will be looking at how we can use Python to get
+more concrete answers for some small examples.
 
 
 ```{python}

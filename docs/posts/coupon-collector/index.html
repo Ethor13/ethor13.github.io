@@ -254,15 +254,15 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A common mistake is to decompose <span class="math inline">\(T\)</span> into random variables <span class="math inline">\(t_i\)</span>, where <span class="math inline">\(t_i\)</span> represents the number of coupons drawn to collect coupon <span class="math inline">\(i\)</span>.</p>
-<p>This is incorrect because we are likely going to be double-counting coupon draws. Let’s look at a simple example where <span class="math inline">\(n = 2\)</span>, and we draw coupon <span class="math inline">\(1\)</span>, then coupon <span class="math inline">\(2\)</span>. This method would set <span class="math inline">\(t_1 = 1\)</span>, <span class="math inline">\(t_2 = 2\)</span>, and <span class="math inline">\(T = 3\)</span>. Obviously this isn’t correct, but it’s easily mistakable when you haven’t seen the right way to approach the problem first.</p>
+<p>A common mistake is to decompose <span class="math inline">\(T\)</span> into random variables <span class="math inline">\(t_i\)</span>, where <span class="math inline">\(t_i\)</span> represents the number of coupons drawn to collect coupon #<span class="math inline">\(i\)</span>.</p>
+<p>This is incorrect because we are likely going to be double-counting coupon draws. Let’s look at a simple example where <span class="math inline">\(n = 2\)</span>, and we draw coupon #<span class="math inline">\(1\)</span>, then coupon #<span class="math inline">\(2\)</span>. This method would set <span class="math inline">\(t_1 = 1\)</span>, <span class="math inline">\(t_2 = 2\)</span>, and <span class="math inline">\(T = 3\)</span>. Obviously this isn’t correct, but it’s easily mistakable when you haven’t seen the right way to approach the problem first.</p>
 </div>
 </div>
 <p>Using <a href="https://brilliant.org/wiki/linearity-of-expectation/">Linearity of Expectation</a>, we can separate our problem into simpler subproblems.</p>
 <p><span class="math display">\[\begin{align*}
     E[T]
     &amp;= E[t_1 + t_2 + \ldots + t_n] \\
-    &amp;= E[t_1] + t_2 + \ldots + E[t_n]
+    &amp;= E[t_1] + E[t_2] + \ldots + E[t_n]
 \end{align*}\]</span></p>
 <p>Now the problem is finding what the general solution is for a number of the form <span class="math inline">\(E[t_i]\)</span>. <span class="math inline">\(E[t_i]\)</span> captures the expected number of coupon draws to get the <span class="math inline">\(i^{th}\)</span> distinct coupon after <span class="math inline">\(i - 1\)</span> distinct coupons have already been drawn. We know that if <span class="math inline">\(i - 1\)</span> out of <span class="math inline">\(n\)</span> coupons have been drawn already, there are <span class="math inline">\(n - i + 1\)</span> remaining coupons we still need to draw. So the probability we draw a new coupon is <span class="math inline">\(\frac{n - i + 1}{n}\)</span>. <span class="math inline">\(t_i\)</span> is satisfied on the first such success, so it has a <a href="https://en.wikipedia.org/wiki/Geometric_distribution">Geometric Distribution</a>. The expected value of a geometric random variable is <span class="math inline">\(\frac{1}{p}\)</span>, or in our case, <span class="math inline">\(\frac{n}{n - i + 1}\)</span>. We can now go back and solve for <span class="math inline">\(E[T]\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
@@ -326,7 +326,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Though not core to the problem at hand, we can quickly discuss what that coefficient would be. Sticking with our previous example of <span class="math inline">\(x_1^3x_5x_9^7x_{12}^{i - 11}\)</span>, we start by thinking about how we can assign an order for these given amounts of coupons. We have <span class="math inline">\(i\)</span> spots, and 3 of coupon #1, so there are <span class="math inline">\({i \choose 3}\)</span> ways to pick where the first kind of coupon go. After these are assigned, there are <span class="math inline">\(i - 3\)</span> spots remaining, so there are <span class="math inline">\({i - 3 \choose 1}\)</span> ways to assign the singular coupon #5 to a spot. Following this reasoning will yield <span class="math inline">\({i - 4 \choose 7}\)</span> and <span class="math inline">\({i - 11 \choose i - 11}\)</span> as the remaining ways to assign the respective coupons. Multiplying all of these “choose” operations gives us the total ways to assign the coupons.</p>
+<p>Though not core to the problem at hand, we can quickly discuss what that coefficient would be. Sticking with our previous example of <span class="math inline">\(x_1^3x_5x_9^7x_{12}^{i - 11}\)</span>, we start by thinking about how we can assign an order for these given amounts of coupons. We have <span class="math inline">\(i\)</span> spots, and 3 of coupon #1, so there are <span class="math inline">\({i \choose 3}\)</span> ways to pick where the first kind of coupon go. After these are assigned, there are <span class="math inline">\(i - 3\)</span> spots remaining, so there are <span class="math inline">\({i - 3 \choose 1}\)</span> ways to assign the singular coupon #5 to a spot. Following this reasoning will yield <span class="math inline">\({i - 4 \choose 7}\)</span> and <span class="math inline">\({i - 11 \choose i - 11}\)</span> as the remaining ways to assign the final two types of coupons. Multiplying all of these “choose” operations gives us the total ways to assign the coupons.</p>
 <p><span class="math display">\[\begin{align*}
     {i \choose 3} \cdot {i - 3 \choose 1} \cdot {i - 4 \choose 7} \cdot {i - 11 \choose i - 11}
     &amp;= \frac{i!}{(i - 3)!3!} \cdot \frac{(i - 3)!}{(i - 4)!1!} \cdot \frac{(i - 4)!}{(i - 11)!7!}
@@ -346,7 +346,7 @@ Note
     &amp;= \sum_{i = 0}^\infty p_i \\
     &amp;= \sum_{i = 0}^\infty \frac{\{(x_1 + \ldots + x_n)^i\}_K}{n^i}
 \end{align*}\]</span></p>
-<p>But finding a way to evaluate the summand is not immediately obvious. To do this, we must find something we do know that looks similar to the above form, namely the exponential <a href="https://en.wikipedia.org/wiki/Power_series">Power Series</a>. As a reminder the power series is:</p>
+<p>But finding a way to evaluate the summand is not immediately obvious. To do this, we must find something we do know that looks similar to the above form, namely the exponential <a href="https://en.wikipedia.org/wiki/Power_series">Power Series</a>. As a reminder, the exponential power series is:</p>
 <p><span class="math display">\[\begin{align*}
     e^x
     &amp;= \sum_{i = 0}^\infty \frac{x^i}{i!}
@@ -363,7 +363,7 @@ Note
     &amp;= \bigg( 1 + x_1 + \frac{x_1^2}{2!} + \ldots \bigg) \cdots
        \bigg( 1 + x_n + \frac{x_n^2}{2!} + \ldots \bigg)
 \end{align*}\]</span></p>
-<p>What we can gleam from this is that in this polynomial expansion, you are picking how many coupons were drawn of each type, instead of fixing a number of draws <span class="math inline">\(i\)</span> like we did previously. If we ignore the coefficients for now and just focus on the <span class="math inline">\(x_j\)</span>’s, we can see how for any possible combination of coupons you can think of, there is a way to get that combination by picking the correct term in each of the <span class="math inline">\(n\)</span> taylor series expansions.</p>
+<p>What we can gleam from this is that in this polynomial expansion, you are picking how many coupons were drawn of each type, instead of fixing a number of draws <span class="math inline">\(i\)</span> like we did previously. If we ignore the coefficients for now and just focus on the <span class="math inline">\(x_j\)</span>’s, we can see how for any possible combination of coupons you can think of, there is a way to get that combination by picking the correct term in each of the <span class="math inline">\(n\)</span> power series expansions.</p>
 <p>Thinking in the same vein, we can represent all the successful ways of achieving <span class="math inline">\(K\)</span> complete sets by only including part of the taylor series expansions for each of the <span class="math inline">\(e^{x_j}\)</span> terms. The part of the taylor series expansions that yield all the complete collections is:</p>
 <p><span class="math display">\[\begin{align*}
     \bigg( \frac{x_1^K}{K!} + \frac{x_1^{K+1}}{(K+1)!} + \ldots \bigg) \cdots
@@ -415,7 +415,7 @@ Note
     &amp;= n\int_0^\infty 1 -
         \left( 1 - S_K(t)e^{-t} \right)^n dt
 \end{align*}\]</span></p>
-<p>And that’s it! It’s okay to be a little bit unsatisfied at this answer since it does contain an integral that isn’t solvable by hand (to my knowledge). However, in the next section, we will be looking at how we can leverage Python to get more concrete answers for some example cases.</p>
+<p>And that’s it! It’s okay to be a little bit unsatisfied at this answer since it does contain an integral that isn’t solvable by hand (to my knowledge). However, in the following code block, we will be looking at how we can use Python to get more concrete answers for some small examples.</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
