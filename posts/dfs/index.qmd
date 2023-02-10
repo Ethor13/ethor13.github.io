@@ -1,0 +1,196 @@
+---
+title: "Riddle me this"
+subtitle: "an Introduction to a DFS Lineup Generating Algorithm"
+date: "2023-02-05"
+css: styles.css
+categories: [daily fantasy sports]
+jupyter: python3
+execute:
+    cache: true
+# bibliography: references.bib
+# csl: ../../applied-mathematical-modelling.csl
+# nocite: |
+#     @*
+---
+
+> I'm known for my puzzles, my tricky ways,\
+> A challenge for Batman, every day.\
+> A question mark symbol, I often display,\
+> My true identity, what do you say?
+
+Say hello to Riddler. Riddler is a project that aims to apply the "moneyball"
+approach to [Daily Fantasy Sports](https://en.wikipedia.org/wiki/Daily_fantasy_sports) 
+(DFS). Using historical results, I believe I can algorithmically find the profit-
+maximizing entries into paid competitions. I plan on periodically creating blog posts to document
+my research and progress.
+
+First, you might be wondering why I decided to call it Riddler in the first place.
+Besides my love for riddles and puzzles, it is an acronym for how I would best 
+describe this project
+
+:::{.riddler}
+[R]{.letter}eally
+
+[I]{.letter}nnovative
+
+[D]{.letter}ata-Driven
+
+[D]{.letter}aily Fantasy Sports
+
+[L]{.letter}ineup-Generating
+
+[E]{.letter}conomically-Motivated
+
+[R]{.letter}obot
+:::
+
+The goal of this post is to introduce the problem and outline the research plan and challenges that I anticipate
+will arise in the development of Riddler. I've broken up the development of Riddler
+into four parts: Optimization, Game Theory, Backtesting, and Extra Considerations.
+
+## Introduction
+
+In DFS, you pick a lineup of players each day. These players
+earn fantasy points depending on their real-world performance that day. There
+is no commitment like traditional fantasy sports, so you are able to place new
+and independent bets on the following day. There are many different contest types and 
+styles, each of which has different payoffs, number of competitors, player pools, and more.
+The different contest types are:
+
+| Contest Type | Description |
+|:------------:|:-----------:|
+| Tournaments | Small & Large field contests with HUGE prizes |
+| Head to Head | Face-off against one opponent; winner takes all |
+| 50/50s | Land in the top half of the field and win cash |
+| Double Ups | Win and double your entry fee |
+| Multipliers | Multiply your entry fee up to 11x when you win |
+| Satellites & Qualifiers | Win your way into higher stakes contests |
+
+And the different contest styles are:
+
+| Contest Style | Description |
+|:------------:|:-----------:|
+| Classic | Create an 8-player lineup while staying under the $50,000 salary cap. Includes Late Swap. |
+| Showdown Captain Mode | Create your team from 1 game, while staying under the $50,000 salary cap |
+| Tiers | Our no-salary format gets you in the game quicker -- select one player from each tier |
+| In-Game Showdown | Draft your showdown team for a portion of a game |
+| Snake | Snake draft a 7-player lineup |
+| Snake Showdown | Snake draft a 4-player lineup |
+
+Mixing and matching types and styles allows you to come up with situational
+competitions where certain strategies could prove to be beneficial. Your choice of
+which competition to play in likely will have large effects on your performance
+and variance as a bettor.
+
+## Optimization
+
+Optimization is the core problem. The high-level idea is that Riddler should return
+the lineup that expects the highest monetary return given a contest structure and player
+pool. 
+
+Depending on the type and style of a competition, you might have different goals.
+From an optimization perspective, this translates to changing your optimization
+objective. Some objectives that might be intuitive include:
+
+* Maximizing Expected Value
+    + Could be useful for Head to Head competitions because there is only one opponent. 
+    Since you only care about the chances that you score higher than one other
+    person, variance might not matter as much -- if you lose, you don't care
+    how much you lose by. We are [risk-netural](https://www.investopedia.com/terms/r/riskneutral.asp) 
+    in this scenario.
+* Maximizing Expected Value + k Standard Deviations
+    + Could be useful for Tournaments or Multiplier competitions because we need a
+    really good outcome to beat the large number of competitors. High expected value
+    might improve probability that we are in top 10%, but to maximize the chances
+    we are in top 1%, we should also maximize variance/standard deviation. We are
+    [risk-seeking](https://www.investopedia.com/terms/r/risk-seeking.asp) in this scenario.
+* Maximizing Expected Value
+    + Could be useful for 50/50s or Double Ups because we want to minimize the chance
+    we land outside the top ~50% of entries. This type of optimization is known as
+    [Mean-Variance Optimization](https://en.wikipedia.org/wiki/Modern_portfolio_theory), 
+    and is a well-stuided topic in portfolio management. We are 
+    [risk-averse](https://www.investopedia.com/terms/r/riskaverse.asp) in this scenario.
+
+<!-- For now we can work through an example that focuses on the Showdown Contest.
+The Showdown contest allows players to select six players from either team in a single
+game. There are no positional requirements, however one of the six players you can
+designate to earn 1.5x points. You must select players whose combined salaries are
+less than $50,000 (which ensures every/one doesn't just select the 6 best players). -->
+
+## Game Theory
+
+Given someway to optimize our lineups, the next question
+is how do we come up with a complex strategy that optimizes our expected return?
+Some contests allow for multiple entries, whereas some only allow one entry. 
+How do we determine the value of submitting another marginal lineup?
+
+Additionally, each contest has an upfront cost. Given a fixed bankroll, how much
+should we bet on each lineup? Riddler could either choose some fixed amount for each
+lineup, or make bigger bets on lineups it is more confident about. Do concepts like
+the Kelly Criterion come into play here (given that our win probability is not
+well-known)? 
+
+The questions I ask here are only a few of the considerations that need to be made
+when selecting a strategy. It should be clear now that simply optimizing a lineup
+according to a metric is only part of the problem. Because we really care about our
+overall success, we might not necessarily want to submit a lineup that has the highest
+expected value on its own; instead, the lineup that maximizes
+the expected value of our cumulative performance on the day might be preferable. 
+
+## Backtesting
+
+Before deploying a strategy, I'd ideally want to know ahead of time how much
+conviction I should have that it will actually work. This is where backtesting
+comes in. Here we'd want to use historical data to see how well our
+strategy would have performed in past competitions. 
+
+There are a myriad of issues that I foresee in this step due to some of the struggles
+I have already encountered. The most pressing matter is that I'm unable to find an
+extensive database of past results. Websites like [RotoGrinders](https://rotogrinders.com/resultsdb/nba)
+have results databases, but only for the past couple of years, even though contests
+had been running for many years prior. Additionally, a common struggle in backtesting
+is avoiding lookahead bias. Lookahead bias is when future information is used to
+make decisions. While it might seem obvious that this is a bad idea, in development
+settings, it is easy to accidentally use data that wouldn't have existed at the
+time of your simulation. One situation that will require special attention to detail
+is keeping track of stats. Any simulation must keep track of running
+totals and averages at each point in time where a decision is being made instead of using
+the full season worth of stats that take into account games that they had not yet
+played. 
+
+## Extra Considerations
+
+This section aims to capture everything else that could present a challenge in the
+development of Riddler. The main topic of this section is developing estimates for
+player expected values and variances. There are a couple of naive approaches you
+could use like cumulative or rolling means, but its hard to quantify which one of
+these best captures what's likely to happen in the next game. This could get very advanced
+and we could start examining specific matchups, days of rest in between games and
+past performance against a team. However, in an aim to focus on the optimal lineups
+and not to invent a new projection system, my goal is to find a projection that is
+"good enough." 
+
+Additionally, real-time challenges are likely to pop-up. A real-time challenge may
+include an injury or trade. An injury is likely to effect the other teammates, but
+disproportinately. If a starting center got hurt, the backup center would stand to
+gain the most, whereas the backup point guard might not change in value too much.
+Trades also pose issues because its hard to predict new team dynamics without any
+historical data. Specifically, in optimization methods that rely on covariances
+between players, Riddler will have to completely guess the chemistry between players 
+on the first game they play together. It could even be a good idea to just avoid
+games featuring a new player all together. 
+
+Even though I just mentioned a few ideas, the takeaway from this section is that
+the data is bound to get messy, so the deployed strategy must not be exploitable
+in the face of these challenges.
+
+## Conclusion
+
+With a roadmap in place, I anticipate the development of Riddler. There are many
+challenges ahead that I've never encountered before that I hope to learn from. 
+As the 'E' in Riddler suggests, this project is economically-motivated. I do want
+to make money from this endeavor, and I truly believe there is money to be made
+if this is done correctly. With that said, I am happy to be sharing everything that
+I go over publicly. Even though I'm leaking alpha, I am rewarded by the chance to
+have my hard-work be recognized and studied. Excited for what's to come and hope
+you are too.

@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/dfs/index.html",
       "/posts/coupon-collector/index.html"
     ]
   }

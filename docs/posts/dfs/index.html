@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-02-05">
+
+<title>Ethan Orlowsky - Riddle me this</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/eio_logo_white.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/eio_logo_white.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ethan Orlowsky</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Ethor13"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/EthanOrlowsky"><i class="bi bi-twitter" role="img" aria-label="Twitter">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ethan-orlowsky/"><i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Riddle me this</h1>
+            <p class="subtitle lead">an Introduction to a DFS Lineup Generating Algorithm</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">daily fantasy sports</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 5, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<blockquote class="blockquote">
+<p>I’m known for my puzzles, my tricky ways,<br>
+A challenge for Batman, every day.<br>
+A question mark symbol, I often display,<br>
+My true identity, what do you say?</p>
+</blockquote>
+<p>Say hello to Riddler. Riddler is a project that aims to apply the “moneyball” approach to <a href="https://en.wikipedia.org/wiki/Daily_fantasy_sports">Daily Fantasy Sports</a> (DFS). Using historical results, I believe I can algorithmically find the profit- maximizing entries into paid competitions. I plan on periodically creating blog posts to document my research and progress.</p>
+<p>First, you might be wondering why I decided to call it Riddler in the first place. Besides my love for riddles and puzzles, it is an acronym for how I would best describe this project</p>
+<div class="riddler">
+<p><span class="letter">R</span>eally</p>
+<p><span class="letter">I</span>nnovative</p>
+<p><span class="letter">D</span>ata-Driven</p>
+<p><span class="letter">D</span>aily Fantasy Sports</p>
+<p><span class="letter">L</span>ineup-Generating</p>
+<p><span class="letter">E</span>conomically-Motivated</p>
+<p><span class="letter">R</span>obot</p>
+</div>
+<p>The goal of this post is to introduce the problem and outline the research plan and challenges that I anticipate will arise in the development of Riddler. I’ve broken up the development of Riddler into four parts: Optimization, Game Theory, Backtesting, and Extra Considerations.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In DFS, you pick a lineup of players each day. These players earn fantasy points depending on their real-world performance that day. There is no commitment like traditional fantasy sports, so you are able to place new and independent bets on the following day. There are many different contest types and styles, each of which has different payoffs, number of competitors, player pools, and more. The different contest types are:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Contest Type</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Tournaments</td>
+<td style="text-align: center;">Small &amp; Large field contests with HUGE prizes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Head to Head</td>
+<td style="text-align: center;">Face-off against one opponent; winner takes all</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">50/50s</td>
+<td style="text-align: center;">Land in the top half of the field and win cash</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Double Ups</td>
+<td style="text-align: center;">Win and double your entry fee</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Multipliers</td>
+<td style="text-align: center;">Multiply your entry fee up to 11x when you win</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Satellites &amp; Qualifiers</td>
+<td style="text-align: center;">Win your way into higher stakes contests</td>
+</tr>
+</tbody>
+</table>
+<p>And the different contest styles are:</p>
+<table class="table">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Contest Style</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Classic</td>
+<td style="text-align: center;">Create an 8-player lineup while staying under the $50,000 salary cap. Includes Late Swap.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Showdown Captain Mode</td>
+<td style="text-align: center;">Create your team from 1 game, while staying under the $50,000 salary cap</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Tiers</td>
+<td style="text-align: center;">Our no-salary format gets you in the game quicker – select one player from each tier</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">In-Game Showdown</td>
+<td style="text-align: center;">Draft your showdown team for a portion of a game</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Snake</td>
+<td style="text-align: center;">Snake draft a 7-player lineup</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Snake Showdown</td>
+<td style="text-align: center;">Snake draft a 4-player lineup</td>
+</tr>
+</tbody>
+</table>
+<p>Mixing and matching types and styles allows you to come up with situational competitions where certain strategies could prove to be beneficial. Your choice of which competition to play in likely will have large effects on your performance and variance as a bettor.</p>
+</section>
+<section id="optimization" class="level2">
+<h2 class="anchored" data-anchor-id="optimization">Optimization</h2>
+<p>Optimization is the core problem. The high-level idea is that Riddler should return the lineup that expects the highest monetary return given a contest structure and player pool.</p>
+<p>Depending on the type and style of a competition, you might have different goals. From an optimization perspective, this translates to changing your optimization objective. Some objectives that might be intuitive include:</p>
+<ul>
+<li>Maximizing Expected Value
+<ul>
+<li>Could be useful for Head to Head competitions because there is only one opponent. Since you only care about the chances that you score higher than one other person, variance might not matter as much – if you lose, you don’t care how much you lose by. We are <a href="https://www.investopedia.com/terms/r/riskneutral.asp">risk-netural</a> in this scenario.</li>
+</ul></li>
+<li>Maximizing Expected Value + k Standard Deviations
+<ul>
+<li>Could be useful for Tournaments or Multiplier competitions because we need a really good outcome to beat the large number of competitors. High expected value might improve probability that we are in top 10%, but to maximize the chances we are in top 1%, we should also maximize variance/standard deviation. We are <a href="https://www.investopedia.com/terms/r/risk-seeking.asp">risk-seeking</a> in this scenario.</li>
+</ul></li>
+<li>Maximizing Expected Value
+<ul>
+<li>Could be useful for 50/50s or Double Ups because we want to minimize the chance we land outside the top ~50% of entries. This type of optimization is known as <a href="https://en.wikipedia.org/wiki/Modern_portfolio_theory">Mean-Variance Optimization</a>, and is a well-stuided topic in portfolio management. We are <a href="https://www.investopedia.com/terms/r/riskaverse.asp">risk-averse</a> in this scenario.</li>
+</ul></li>
+</ul>
+<!-- For now we can work through an example that focuses on the Showdown Contest.
+The Showdown contest allows players to select six players from either team in a single
+game. There are no positional requirements, however one of the six players you can
+designate to earn 1.5x points. You must select players whose combined salaries are
+less than $50,000 (which ensures every/one doesn't just select the 6 best players). -->
+</section>
+<section id="game-theory" class="level2">
+<h2 class="anchored" data-anchor-id="game-theory">Game Theory</h2>
+<p>Given someway to optimize our lineups, the next question is how do we come up with a complex strategy that optimizes our expected return? Some contests allow for multiple entries, whereas some only allow one entry. How do we determine the value of submitting another marginal lineup?</p>
+<p>Additionally, each contest has an upfront cost. Given a fixed bankroll, how much should we bet on each lineup? Riddler could either choose some fixed amount for each lineup, or make bigger bets on lineups it is more confident about. Do concepts like the Kelly Criterion come into play here (given that our win probability is not well-known)?</p>
+<p>The questions I ask here are only a few of the considerations that need to be made when selecting a strategy. It should be clear now that simply optimizing a lineup according to a metric is only part of the problem. Because we really care about our overall success, we might not necessarily want to submit a lineup that has the highest expected value on its own; instead, the lineup that maximizes the expected value of our cumulative performance on the day might be preferable.</p>
+</section>
+<section id="backtesting" class="level2">
+<h2 class="anchored" data-anchor-id="backtesting">Backtesting</h2>
+<p>Before deploying a strategy, I’d ideally want to know ahead of time how much conviction I should have that it will actually work. This is where backtesting comes in. Here we’d want to use historical data to see how well our strategy would have performed in past competitions.</p>
+<p>There are a myriad of issues that I foresee in this step due to some of the struggles I have already encountered. The most pressing matter is that I’m unable to find an extensive database of past results. Websites like <a href="https://rotogrinders.com/resultsdb/nba">RotoGrinders</a> have results databases, but only for the past couple of years, even though contests had been running for many years prior. Additionally, a common struggle in backtesting is avoiding lookahead bias. Lookahead bias is when future information is used to make decisions. While it might seem obvious that this is a bad idea, in development settings, it is easy to accidentally use data that wouldn’t have existed at the time of your simulation. One situation that will require special attention to detail is keeping track of stats. Any simulation must keep track of running totals and averages at each point in time where a decision is being made instead of using the full season worth of stats that take into account games that they had not yet played.</p>
+</section>
+<section id="extra-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="extra-considerations">Extra Considerations</h2>
+<p>This section aims to capture everything else that could present a challenge in the development of Riddler. The main topic of this section is developing estimates for player expected values and variances. There are a couple of naive approaches you could use like cumulative or rolling means, but its hard to quantify which one of these best captures what’s likely to happen in the next game. This could get very advanced and we could start examining specific matchups, days of rest in between games and past performance against a team. However, in an aim to focus on the optimal lineups and not to invent a new projection system, my goal is to find a projection that is “good enough.”</p>
+<p>Additionally, real-time challenges are likely to pop-up. A real-time challenge may include an injury or trade. An injury is likely to effect the other teammates, but disproportinately. If a starting center got hurt, the backup center would stand to gain the most, whereas the backup point guard might not change in value too much. Trades also pose issues because its hard to predict new team dynamics without any historical data. Specifically, in optimization methods that rely on covariances between players, Riddler will have to completely guess the chemistry between players on the first game they play together. It could even be a good idea to just avoid games featuring a new player all together.</p>
+<p>Even though I just mentioned a few ideas, the takeaway from this section is that the data is bound to get messy, so the deployed strategy must not be exploitable in the face of these challenges.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>With a roadmap in place, I anticipate the development of Riddler. There are many challenges ahead that I’ve never encountered before that I hope to learn from. As the ‘E’ in Riddler suggests, this project is economically-motivated. I do want to make money from this endeavor, and I truly believe there is money to be made if this is done correctly. With that said, I am happy to be sharing everything that I go over publicly. Even though I’m leaking alpha, I am rewarded by the chance to have my hard-work be recognized and studied. Excited for what’s to come and hope you are too.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
