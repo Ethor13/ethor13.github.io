@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Ethan Orlowsky",
     "section": "",
-    "text": "Posts\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nRiddle me this\n\n\nan Introduction to a DFS Lineup Generating Algorithm\n\n\n\n\ndaily fantasy sports\n\n\n \n\n\n\n\nFeb 10, 2023\n\n\n7 min\n\n\n\n\n\n\n\n\nExtreme Couponing\n\n\nCoupon Collector’s Problem Generalized to K sets of coupons\n\n\n\n\nprobability\n\n\n \n\n\n\n\nJan 23, 2023\n\n\n11 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Posts\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\nRiddle me this\n\n\nan Introduction to a DFS Lineup Generating Algorithm\n\n\n\n\ndaily fantasy sports\n\n\n \n\n\n\n\nFeb 10, 2023\n\n\n7 min\n\n\n\n\n\n\n\n\nExtreme Couponing\n\n\nCoupon Collector’s Problem Generalized to K sets of coupons\n\n\n\n\nprobability\n\n\n \n\n\n\n\nJan 23, 2023\n\n\n11 min\n\n\n\n\n\n\n\n\nResearch Archives\n\n\nThings I found interesting\n\n\n\n\nmisc\n\n\n \n\n\n\n\nJan 1, 2023\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/coupon-collector/index.html",
@@ -75,5 +75,12 @@
     "title": "Riddle me this",
     "section": "Conclusion",
     "text": "Conclusion\nWith a roadmap in place, I anticipate the development of Riddler. There are many challenges ahead that I’ve never encountered before that I hope to learn from. As the ‘E’ in Riddler suggests, this project is economically-motivated. I do want to make money from this endeavor, and I truly believe there is money to be made if this is done correctly. With that said, I am happy to be sharing everything that I go over publicly. Even though I’m leaking alpha, I am rewarded by the chance to have my hard-work be recognized and studied. Excited for what’s to come and hope you are too."
+  },
+  {
+    "objectID": "posts/research-archives/index.html",
+    "href": "posts/research-archives/index.html",
+    "title": "Research Archives",
+    "section": "",
+    "text": "Papers\n\n\n\nPaper Name\nTopic\nRead?\nCitation\nNotes\n\n\n\n\nComputer Poker: A review\nPoker\nNo\n[1]\nEffective Hand Strength (EHS) Algorithm\n\n\nModifying Variability and Correlations in Winner-Take-All Contests\nGame Theory\nYes\n[2]\nHas applications in Riddler Game Theory Section\n\n\nOptimization Methods in Finance\nPortfolio Management\nParts\n[3]\npg. 143 Mean-Variance Optimization. Related to my quant stack exchange post\n\n\n\n\n\nWebsites\n\n\n\nTitle\nTopic\nRead?\nNotes\n\n\n\n\nDetermining Mean-Variance Efficient Portfolios Using Matrix Algebra\nPortfolio Management\nNo\n\n\n\ncvxpy Quadratic Programming\nOptimization\nYes\n\n\n\n\n\n\n\n\n\nReferences\n\n[1] J. Rubin, I. Watson, Computer poker: A review, Artificial Intelligence. 175 (2011) 958–987. https://doi.org/https://doi.org/10.1016/j.artint.2010.12.005.\n\n\n[2] A. Gaba, I. Tsetlin, R.L. Winkler, Modifying variability and correlations in winner-take-all contests, Operations Research. 52 (2004) 384–395. http://www.jstor.org/stable/30036590 (accessed February 10, 2023).\n\n\n[3] G. Cornuéjols, J. Peña, R. Tütüncü, Optimization methods in finance, Cambridge University Press, 2018. https://books.google.com/books?id=Dq1jDwAAQBAJ."
   }
 ]

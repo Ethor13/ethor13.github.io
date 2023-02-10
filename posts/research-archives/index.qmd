@@ -1,0 +1,28 @@
+---
+title: "Research Archives"
+subtitle: "Things I found interesting"
+date: "2023-01-01"
+categories: [misc]
+jupyter: python3
+execute:
+    cache: true
+bibliography: references.bib
+csl: ../../applied-mathematical-modelling.csl
+nocite: |
+    @*
+---
+
+# Papers
+
+| Paper Name | Topic | Read? | Citation | Notes |
+|:----------:|:-------:|:-----:|:--------:|:-----:|
+| Computer Poker: A review | Poker | No | [@rubinwatson] | [Effective Hand Strength](https://en.wikipedia.org/wiki/Effective_hand_strength_algorithm) (EHS) Algorithm |
+| Modifying Variability and Correlations in Winner-Take-All Contests | Game Theory | Yes | [@gabatsetlin] | Has applications in Riddler Game Theory Section |
+| Optimization Methods in Finance | Portfolio Management | Parts | [@cornuejolspena] | pg. 143 Mean-Variance Optimization. Related to my [quant stack exchange post](https://quant.stackexchange.com/questions/74562/alternative-form-of-mean-variance-optimization-that-uses-standard-deviation) |
+
+# Websites
+
+| Title | Topic | Read? | Notes |
+|:-----:|:-----:|:-----:|:-----:|
+| [Determining Mean-Variance Efficient Portfolios Using Matrix Algebra](https://bookdown.org/compfinezbook/introcompfinr/Determining-Mean-Variance-Effici.html) | Portfolio Management | No | |
+| [cvxpy Quadratic Programming](https://www.cvxpy.org/examples/basic/quadratic_program.html) | Optimization | Yes | |
