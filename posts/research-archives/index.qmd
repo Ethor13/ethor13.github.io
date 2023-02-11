@@ -22,7 +22,7 @@ nocite: |
 
 # Websites
 
-| Title | Topic | Read? | Notes |
-|:-----:|:-----:|:-----:|:-----:|
-| [Determining Mean-Variance Efficient Portfolios Using Matrix Algebra](https://bookdown.org/compfinezbook/introcompfinr/Determining-Mean-Variance-Effici.html) | Portfolio Management | No | |
-| [cvxpy Quadratic Programming](https://www.cvxpy.org/examples/basic/quadratic_program.html) | Optimization | Yes | |
+| Title | Topic | Read? | Link | Notes |
+|:-----:|:-----:|:-----:|:----:|:-----:|
+| Determining Mean-Variance Efficient Portfolios Using Matrix Algebra | Portfolio Management | No | [![](external-link-white.png)](https://bookdown.org/compfinezbook/introcompfinr/Determining-Mean-Variance-Effici.html) | |
+| cvxpy Quadratic Programming | Optimization | Yes | [![](external-link-white.png)](https://www.cvxpy.org/examples/basic/quadratic_program.html)  | Mean-Variance Optimization |
