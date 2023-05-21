@@ -19,6 +19,7 @@ nocite: |
 | Computer Poker: A review | Poker | No | [@rubinwatson] | [Effective Hand Strength](https://en.wikipedia.org/wiki/Effective_hand_strength_algorithm) (EHS) Algorithm |
 | Modifying Variability and Correlations in Winner-Take-All Contests | Game Theory | Yes | [@gabatsetlin] | Has applications in Riddler Game Theory Section |
 | Optimization Methods in Finance | Portfolio Management | Parts | [@cornuejolspena] | pg. 143 Mean-Variance Optimization. Related to my [quant stack exchange post](https://quant.stackexchange.com/questions/74562/alternative-form-of-mean-variance-optimization-that-uses-standard-deviation) |
+| Attention is All You Need | Machine Learning | Yes | [@vaswani2017attention] | Transformers |
 
 # Websites
 
