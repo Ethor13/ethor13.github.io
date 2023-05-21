@@ -1,5 +1,7 @@
 .quarto/
-.venv/
 _freeze/
 .jupyter_cache/
 /.quarto/
+docs/
+envs/
+_environment

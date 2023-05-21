@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/dfs-scraping/index.html",
       "/posts/dfs/index.html",
       "/posts/coupon-collector/index.html",
       "/posts/research-archives/index.html"

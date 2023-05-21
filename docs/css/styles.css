@@ -121,6 +121,22 @@ div.quarto-post .listing-categories .listing-category:hover {
 	height: auto;
 }
 
+/* center figure captions */
+.figure {
+	display: flex;
+	flex-direction: column;
+}
+
+.figure-caption {
+	display: inherit;
+	justify-content: center;
+}
+
+/* change color of in-line code */
+code {
+	color: #dbad6a;
+}
+
 /* prevent latex overflowing lines */
 mjx-container {
 	overflow-x: scroll;
